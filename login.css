@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Stylizacja ciała dokumentu */
+body {
+    background-color: white; /* Beżowe tło */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Stylizacja kontenera formularza */
+.container {
+    background-color: #D0C1A9; /* Jasny beżowy */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+}
+
+/* Stylizacja nagłówka */
+header {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Kolor brązowy */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Stylizacja pól formularza */
+.field {
+    margin-bottom: 15px;
+}
+
+.field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D2B48C; /* Kolor piaskowy */
+    border-radius: 5px;
+    background-color: #D2B48C; /* Beżowy */
+}
+
+.field input:focus {
+    border-color: #ad9379; /* Kolor brązowy */
+    outline: none;
+}
+
+/* Stylizacja przycisków */
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8B4513; /* Kolor brązowy */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #A0522D; /* Ciemniejszy brązowy */
+}
+
+/* Stylizacja linków */
+.links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.links a {
+    color: white; /* Kolor brązowy */
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Stylizacja wiadomości błędu */
+.message {
+    background-color: #FFCCCB; /* Jasny czerwony dla błędów */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}

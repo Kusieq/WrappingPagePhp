@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth; 
+}
+
+
+nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4vw;
+    max-height: 4vw;
+    min-height: 50px;
+    background-color: #ba9573;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    justify-content: center; /* Dodajemy centrowanie wzdłuż osi poziomej */
+    margin: 0 auto; /* Wyśrodkowanie elementów na środku poziomo */
+}
+
+.nav-container div {
+    flex-grow: 1;
+    text-align: center; 
+}
+
+.nav-container div a {
+    font-family: "Noto Serif", serif;
+    display: inline-block;
+    padding: 1.7% 2%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1vw;
+    width: 8vw; /* Stała szerokość */
+    height: 2.4vw; /* Stała wysokość */
+    line-height: 2.4vw; /* Wyrównujemy tekst w pionie */
+    border-radius: 1vw; 
+    background-color: #ba9573;
+    transition: background-color 0.3s ease;
+    margin-left: 1.6vw;
+    margin-right: 1.6vw;
+}
+ 
+.nav-container div a:hover {
+    background-color: #806348;
+    border-radius: 1vw; 
+}
+
+@media only screen and (max-width: 767px) {
+    nav {
+        height: 4vw;
+    max-height: 50px;
+    min-height: 50px;
+    }
+
+    .nav-container {
+        width: 90%;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    .nav-container div:not(:last-child) {
+        margin-right: 2vw;
+    }
+
+    .nav-container div a {
+        padding: 0.3vw 0,6vw;
+        width: 10vw; /* Stała szerokość */
+        line-height: 2.5vw; /* Wyrównujemy tekst w pionie */
+        min-height: 2.0vw;
+        font-size: min(1.5vw); /* Minimalna wielkość czcionki 2vw lub 16px */
+        margin-left: 1.6vw;
+        margin-right: 1.6vw;
+    }
+
+}
+
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px; /* Odstępy między obrazkami: 40px w pionie, 20px w poziomie */
+    padding: 20px;
+    margin-top: 75px; /* Margines na górze galerii */
+    margin-bottom: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    scroll-margin-top: 90px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    display: flex;
+    aspect-ratio: 9 / 8; /* Ustawia proporcje obrazu, np. 16:9 */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.gallery-item img {
+    width: 80%; /* Szerokość obrazu ustawiona na 80% szerokości kontenera */
+    height: 100%;
+    object-fit: cover; /* Upewnia się, że obrazki są przycięte, aby pasowały do kontenerów */
+    display: block;
+    border-radius: 10px; /* Dodaj zaokrąglenie rogów do kontenera */
+}
+
+@media only screen and (max-width: 767px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr); /* Jedna kolumna na ekranach o szerokości mniejszej niż 767px */
+        gap: 20px; /* Odstępy między obrazkami */
+        padding: 10px; /* Zmniejszamy wewnętrzne marginesy galerii */
+        margin-left: 30px; /* Zmniejszamy marginesy na bokach galerii */
+        margin-right: 30px;
+    }
+
+    .gallery-item {
+        height: auto; /* Automatyczna wysokość kontenera na ekranach o mniejszej szerokości */
+    }
+}
+
+.brown-rectangleContact {
+    background-color: #D0C1A9;
+    color: white;
+    padding: 20px;
+    align-items: center;
+    scroll-margin-top: 70px;
+}
+
+.brown-rectangleContact h2 {
+    font-family: "Noto Serif", serif;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* Reduced margin-top */
+    margin-bottom: 4vh;
+}
+
+.contact-info div {
+    text-align: center;
+    justify-content: center;
+}
+
+.contact-info p {
+    font-family: "Noto Serif", serif;
+    color: white;
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding-left: 3vw; /* Added padding-top to ensure some spacing */
+    padding-right: 4vw; /* Added padding-top to ensure some spacing */
+}
+
+.contact-info .iconPh {
+    width: 3.8vw;  /* Adjusted to be responsive */
+    height: auto;
+    margin-bottom: 1.5vh;  /* Reduced margin-bottom */
+    margin-right: 1vw;
+}
+.contact-info .iconMl {
+    width: 4vw;  /* Adjusted to be responsive */
+    height: auto;
+    margin-bottom: 1.5vh;  /* Reduced margin-bottom */
+    margin-right: 0.9vw;
+}
+.contact-info .iconFb {
+    width: 4vw;  /* Adjusted to be responsive */
+    height: auto;
+    margin-bottom: 1.5vh;  /* Reduced margin-bottom */
+    margin-right: 0.85vw;
+}
+
+
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+.form-container div {
+    align-items: center;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container button {
+    font-family: "Noto Serif", serif;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 2%;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+
+.form-container textarea {
+    font-family: "Noto Serif", serif;
+    padding-bottom: 10%; 
+}
+.form-container button {
+    font-family: "Noto Serif", serif;
+    padding: 1% 2%;
+    background-color: #BA9573;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer {
+    background-color: #806348; 
+    color: white; 
+    text-align: center; 
+    padding: 20px 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+.footer p {
+    font-family: "Noto Serif", serif;
+    font-size: 1vw;
+}

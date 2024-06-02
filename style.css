@@ -1,0 +1,442 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    justify-content: center;
+    align-items: center;
+}
+html{
+    scroll-behavior: smooth; 
+}
+
+.wrapper {
+    position: relative;
+}
+
+nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4vw;
+    max-height: 4vw;
+    min-height: 50px;
+    background-color: #ba9573;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    justify-content: center; /* Dodajemy centrowanie wzdłuż osi poziomej */
+    margin: 0 auto; /* Wyśrodkowanie elementów na środku poziomo */
+}
+
+.nav-container div {
+    flex-grow: 1;
+    text-align: center; 
+}
+
+.nav-container div a {
+    font-family: "Noto Serif", serif;
+    display: inline-block;
+    padding: 1.7% 2%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1vw;
+    width: 8vw; /* Stała szerokość */
+    height: 2.4vw; /* Stała wysokość */
+    line-height: 2.4vw; /* Wyrównujemy tekst w pionie */
+    border-radius: 1vw; 
+    background-color: #ba9573;
+    transition: background-color 0.3s ease;
+    margin-left: 1.6vw;
+    margin-right: 1.6vw;
+}
+ 
+.nav-container div a:hover {
+    background-color: #806348;
+    border-radius: 1vw; 
+}
+
+@media only screen and (max-width: 767px) {
+    nav {
+        height: 4vw;
+    max-height: 50px;
+    min-height: 50px;
+    }
+
+    .nav-container {
+        width: 90%;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    .nav-container div:not(:last-child) {
+        margin-right: 2vw;
+    }
+
+    .nav-container div a {
+        padding: 0.3vw 0,6vw;
+        width: 10vw; /* Stała szerokość */
+        line-height: 2.5vw; /* Wyrównujemy tekst w pionie */
+        min-height: 2.0vw;
+        font-size: min(1.5vw); /* Minimalna wielkość czcionki 2vw lub 16px */
+        margin-left: 1.6vw;
+        margin-right: 1.6vw;
+    }
+
+}
+
+
+.full-width-image {
+    position: relative;
+    z-index: 0;
+}
+
+.full-width-image img {
+    display: block;
+    width: 100%;
+    height: 50vw;
+    opacity: 0.6;
+}
+
+.black-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vw;
+    background-color: #000;
+    z-index: -1;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    z-index: 2;
+    max-width: 90%; 
+    margin-bottom: 5vw;
+}
+
+.image-text h1 {
+    font-size: 6vw;
+    margin: 0;
+    font-family: "Noto Serif", serif;
+}
+
+.image-text p {
+    font-size: 3vw;
+    margin: 0;
+    font-family: "Noto Serif", serif;
+}
+
+
+
+
+.icons-container {
+    position: relative; 
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%; 
+}
+
+.icon img {
+    width: 6%; 
+    margin-right: 4%;  
+}
+
+.icon p {
+    font-family: "Noto Serif", serif;
+    max-width: 33%; 
+    font-size: 1.1vw; 
+    word-wrap: break-word; 
+}
+
+.big-image {
+    position: absolute;
+    top: 4.5%;
+    right: 1%;
+    width: 40vw; 
+    max-width: 35%;
+    margin-right: 15%;
+    z-index: -1;
+}
+
+.big-image img {
+    width: 80%; 
+    height: auto;
+    border-radius: 10px;
+    margin-left: 10%;
+}
+
+.offer-description {
+    font-family: "Noto Serif", serif;
+    scroll-margin-top: 5vw;
+    position: relative;
+    color: #000; 
+    font-size: 2vw; 
+    margin-top: 5%; 
+    margin-bottom: 2%;
+    margin-left: 20%; 
+}
+
+
+
+
+
+.brown-rectangle {
+    margin-top: 5%;
+    margin-bottom: 3%;
+    background-color: #D0C1A9;
+    min-height: 100%;
+    padding: 20px;
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-content {
+    flex: 1;
+    margin-left: 14%;
+    margin-top: 9.5%;
+}
+
+.left-content img {
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.right-content {
+    flex: 2;
+    padding: 0 2%;
+    margin-left: 8%;
+    margin-right: 15%;
+}
+
+.right-content p {
+    font-family: "Noto Serif", serif;
+    color: #fff;
+    font-size: 1.1vw;
+    line-height: 1.7;
+    word-wrap: break-word;
+    max-width: 110%;
+}
+.right-content h2{
+    font-family: "Noto Serif", serif;
+    font-size: 3vw;
+    color: #fff;
+    margin-left: 7%;
+}
+
+
+
+
+.pricing {
+    scroll-margin-top: 5vw;
+    margin-top: 7%;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+.pricing h2 {
+    font-family: "Noto Serif", serif;
+    font-size: 3vw;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.pricing p {
+    font-family: "Noto Serif", serif;
+    font-size: 1.1vw;
+    text-align: center;
+    color: black;
+    word-wrap: break-word; 
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.pricing-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1%;
+    
+}
+
+.pricing-plan {
+    margin: 2%;
+    width: 30%; 
+    max-width: 350px; 
+    background-color: #BA9573;
+    border-radius: 10px;
+    font-size: 1.1vw;
+    background: linear-gradient(to bottom, #D0C1A9, #BA9573); /* Gradient tła */
+}
+
+.pricing-header {
+    background-color: #D0C1A9;
+    padding: 1.5%;
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+.pricing-body {
+    font-family: "Noto Serif", serif;
+    padding: 3%;
+    font-size: 1.1vw;
+}
+
+.pricing-body p {
+    font-family: "Noto Serif", serif;
+    font-size: 1.1vw;
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .pricing-plan {
+        position: relative; /* Zmieniamy pozycję na relative */
+        width: 50%; /* Ustawiamy szerokość na 100% */
+        max-width: none; /* Usuwamy maksymalną szerokość */
+        margin-left: 30%;
+        margin-right: 30%
+    }
+}
+
+
+
+
+
+.brown-rectangleContact {
+    background-color: #D0C1A9;
+    color: white;
+    padding: 20px;
+    align-items: center;
+    scroll-margin-top: 70px;
+}
+
+.brown-rectangleContact h2 {
+    font-family: "Noto Serif", serif;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* Reduced margin-top */
+    margin-bottom: 4vh;
+}
+
+.contact-info div {
+    text-align: center;
+    justify-content: center;
+}
+
+.contact-info p {
+    font-family: "Noto Serif", serif;
+    color: white;
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding-left: 3vw; /* Added padding-top to ensure some spacing */
+    padding-right: 4vw; /* Added padding-top to ensure some spacing */
+}
+
+.contact-info .iconPh {
+    width: 3.8vw;  /* Adjusted to be responsive */
+    height: auto;
+    margin-bottom: 1.5vh;  /* Reduced margin-bottom */
+    margin-right: 1vw;
+}
+.contact-info .iconMl {
+    width: 4vw;  /* Adjusted to be responsive */
+    height: auto;
+    margin-bottom: 1.5vh;  /* Reduced margin-bottom */
+    margin-right: 0.9vw;
+}
+.contact-info .iconFb {
+    width: 4vw;  /* Adjusted to be responsive */
+    height: auto;
+    margin-bottom: 1.5vh;  /* Reduced margin-bottom */
+    margin-right: 0.85vw;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+.form-container div {
+    align-items: center;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container button {
+    font-family: "Noto Serif", serif;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 2%;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.form-container textarea {
+    padding-bottom: 10%; 
+}
+.form-container button {
+    font-family: "Noto Serif", serif;
+    padding: 1% 2%;
+    background-color: #BA9573;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer {
+    background-color: #806348; 
+    color: white; 
+    text-align: center; 
+    padding: 20px 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+.footer p {
+    font-family: "Noto Serif", serif;
+    font-size: 1vw;
+}
