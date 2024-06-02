@@ -14,29 +14,46 @@
         <?php 
          
          include("php/config.php");
+
          if(isset($_POST['submit'])){
-            $username = mysqli_real_escape_string($con, $_POST['username']);
-            $email = mysqli_real_escape_string($con, $_POST['email']);
-            $password = mysqli_real_escape_string($con, $_POST['password']);
-            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
-            // Verifying the unique email
-            $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'");
-
-            if(mysqli_num_rows($verify_query) != 0){
-                echo "<div class='message'>
-                        <p>Ten email został już użyty</p>
-                      </div> <br>";
-                echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
-            } else {
-                mysqli_query($con, "INSERT INTO users(Username, Email, Password) VALUES('$username', '$email', '$hashed_password')") or die("Error Occurred");
-
-                echo "<div class='messageCorrect'>
-                        <p>Rejestracja pomyślna</p>
-                      </div> <br>";
-                echo "<a href='login.php'><button class='btn'>Login Now</button>";
-            }
+             $username = mysqli_real_escape_string($con, $_POST['username']);
+             $email = mysqli_real_escape_string($con, $_POST['email']);
+             $password = mysqli_real_escape_string($con, $_POST['password']);
+         
+             // Sprawdzanie długości loginu i hasła
+             if(strlen($username) < 6){
+                 echo "<div class='message'>
+                         <p>Login musi mieć więcej niż 6 znaków</p>
+                       </div> <br>";
+                 echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+             } elseif(strlen($password) < 6){
+                 echo "<div class='message'>
+                         <p>Hasło musi mieć więcej niż 6 znaków</p>
+                       </div> <br>";
+                 echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+             } else {
+                 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+         
+                 // Sprawdzanie, czy email jest unikalny
+                 $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'");
+         
+                 if(mysqli_num_rows($verify_query) != 0){
+                     echo "<div class='message'>
+                             <p>Ten email został już użyty</p>
+                           </div> <br>";
+                     echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+                 } else {
+                     mysqli_query($con, "INSERT INTO users(Username, Email, Password) VALUES('$username', '$email', '$hashed_password')") or die("Error Occurred");
+         
+                     echo "<div class='messageCorrect'>
+                             <p>Rejestracja pomyślna</p>
+                           </div> <br>";
+                     echo "<a href='login.php'><button class='btn'>Login Now</button>";
+                 }
+             }
          } else {
+             // Opcjonalnie: obsługa przypadku, gdy formularz nie został przesłany
+         
         ?>
 
             <header>Rejestracja</header>
